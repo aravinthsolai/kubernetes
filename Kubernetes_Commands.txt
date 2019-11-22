@@ -1,0 +1,23 @@
+kubectl create -f replicaset-definition.yml
+kubectl replace -f replicaset-definition.yml
+kubectl scale --replicas=6 -f replicaset-definition.yml
+kubectl get ReplicaSet
+kubectl delete replicaset myapp-replicaset
+
+kubectl describe ReplicaSet
+
+kubectl delete pod 
+
+kubectl describe replicaset
+
+kubectl get pods -o wide
+
+kubectl get all
+
+kubectl apply -f deployment-definition.yml --record
+kubectl rollout status deployment/myapp-deployment
+kubectl describe deployment
+kubectl rollout history deployment/myapp-deployment
+kubectl set image deployment/myapp-deployment nginx-container=nginx:1.12-perl
+
+kubectl rollout undo deployment/myapp-deployment
